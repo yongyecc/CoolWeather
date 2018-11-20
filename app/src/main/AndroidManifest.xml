@@ -2,20 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.coolweather">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
         android:allowBackup="true"
+        android:name=".utils.globalContext"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.app.coolweather.activities.choose_area">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="coolweather.mainactivity" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.showarea">
+            <intent-filter>
+                <action android:name="com.app.showArea" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.showWeatherAcitivty">
+            <intent-filter>
+                <action android:name="com.app.showWeatherInfo" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>
